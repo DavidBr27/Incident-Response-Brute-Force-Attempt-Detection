@@ -6,7 +6,8 @@
 
 # 🚨 Incident Response: Brute Force Attempt Detection
 
-![image](https://github.com/user-attachments/assets/078932c1-3e7e-48cf-a0c1-1cd787336ce6)
+![image](https://github.com/user-attachments/assets/bbcf9ecb-02a9-47da-bb36-6ad932e117a3)
+
 
 ---
 
@@ -206,7 +207,7 @@ DeviceLogonEvents
 | where ActionType == "LogonFailed"
 | summarize NumberOfFailures = count() by RemoteIP, ActionType, DeviceName
 | where NumberOfFailures >= 50
-| order by TimeGenerated desc
+| order by NumberOfFailures desc
 ```
 ![image](https://github.com/user-attachments/assets/75dedd96-254f-41bc-9b49-5edad6f0ffcf)
 
